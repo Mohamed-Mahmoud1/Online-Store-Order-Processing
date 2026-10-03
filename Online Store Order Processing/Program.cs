@@ -1,4 +1,6 @@
-﻿namespace Online_Store_Order_Processing
+﻿using System.Reflection.Emit;
+
+namespace Online_Store_Order_Processing
 {
     internal class Program
     {
@@ -20,33 +22,66 @@
             };
 
             #region Task 01 : Smart Product Search
-            Console.WriteLine("---Electronic---");
-            List<Product> ElectronicsProducts = Product.SearchProducts(catalog,P=>P.Category=="Electronics");
-            foreach(var product in ElectronicsProducts)
-            {
-                Console.WriteLine($"{product.Name}-${product.Price}(Stock:{product.Stock})");
-            }
+            //Console.WriteLine("---Electronic---");
+            //List<Product> ElectronicsProducts = Product.SearchProducts(catalog,P=>P.Category=="Electronics");
+            //foreach(var product in ElectronicsProducts)
+            //{
+            //    Console.WriteLine($"{product.Name}-${product.Price}(Stock:{product.Stock})");
+            //}
 
-            Console.WriteLine("\n---Under $50---");
-            List<Product> Under50Products = Product.SearchProducts(catalog,P=>P.Price<50);
-            foreach(var product in Under50Products)
-            {
-                Console.WriteLine($"{product.Name}-${product.Price}(Stock:{product.Stock})");
-            }
+            //Console.WriteLine("\n---Under $50---");
+            //List<Product> Under50Products = Product.SearchProducts(catalog,P=>P.Price<50);
+            //foreach(var product in Under50Products)
+            //{
+            //    Console.WriteLine($"{product.Name}-${product.Price}(Stock:{product.Stock})");
+            //}
 
-            Console.WriteLine("\n---Stock>0---");
-            List<Product> InStockProducts = Product.SearchProducts(catalog,P=>P.Stock>0);
-            foreach(var product in InStockProducts)
-            {
-                Console.WriteLine($"{product.Name}-${product.Price}(Stock:{product.Stock})");
-            }
+            //Console.WriteLine("\n---Stock>0---");
+            //List<Product> InStockProducts = Product.SearchProducts(catalog,P=>P.Stock>0);
+            //foreach(var product in InStockProducts)
+            //{
+            //    Console.WriteLine($"{product.Name}-${product.Price}(Stock:{product.Stock})");
+            //}
 
-            Console.WriteLine("\n---Under $100---");
-            List<Product> Under100Products = Product.SearchProducts(catalog,P=>P.Price<100);
-            foreach(var product in Under100Products)
-            {
-                Console.WriteLine($"{product.Name}-${product.Price}(Stock:{product.Stock})");
-            }
+            //Console.WriteLine("\n---Under $100---");
+            //List<Product> Under100Products = Product.SearchProducts(catalog,P=>P.Price<100);
+            //foreach(var product in Under100Products)
+            //{
+            //    Console.WriteLine($"{product.Name}-${product.Price}(Stock:{product.Stock})");
+            //}
+
+            #endregion
+
+            #region Task 03 : Custom Report Generator
+            //Console.WriteLine("---Short Report---");
+            //Product.PrintReport(catalog,p=> Console.WriteLine($"{p.Name}-${p.Price}"));
+
+            //Console.WriteLine("\n---Detailed Report---");
+            //Product.PrintReport(catalog,p=> Console.WriteLine($"[{ p.Category}]{p.Name}| Price:${p.Price}| Stock:{p.Stock}"));
+
+
+            //List<string> SummaryList = Product.TransformProducts<string>(catalog,p=> $"{p.Name}(${p.Price})");
+            //foreach(var item in SummaryList)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            //string Expensive = "Expensive!", Affordable = "Affordable";
+            //List<string> PriceLabel = Product.TransformProducts<string>(catalog,P=>$"{P.Name}:{(P.Price > 100 ? "Expensive!" : "Affordable")}");
+
+            //foreach (var item in PriceLabel)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            //List<Product> products = Product.FilterProducts(catalog,p=>p.Stock<20);
+            //foreach (var product in products)
+            //{
+            //    Console.WriteLine($"[LOW STOCK]{product.Name}:only {product.Stock} left!");
+            //}
+
+
+
 
             #endregion
 
